@@ -1,0 +1,33 @@
+<template>
+     <lightning-accordion allow-multiple-sections-open active-section-name="userRecordSection">
+        <lightning-accordion-section name="userRecordSection" class ="slds-text-color_default" label="User Details">
+      <template if:true={userRecord}>
+        <div class="slds-grid slds-gutters slds-m-bottom_small">
+            <div class="slds-col slds-size_1-of-2">
+               <label class="slds-form-element__label">Name</label>
+               <p class="slds-p-top_xx-small black-text">{userRecord.name}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+               <label class="slds-form-element__label">Email</label>
+               <p class="slds-p-top_xx-small black-text">{userRecord.email}</p>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters slds-m-bottom_small">
+            <div class="slds-col slds-size_1-of-2">
+               <label class="slds-form-element__label">Role</label>
+               <p class="slds-p-top_xx-small black-text">{userRecord.roleName}</p>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+               <label class="slds-form-element__label">Profile Name</label>
+               <p class="slds-p-top_xx-small black-text">{userRecord.profileName}</p>
+            </div>
+        </div>
+      </template>
+      <template if:true={displayError}>
+         <div class="slds-text-color_error slds-p-around_small">
+            {errorMesage}
+         </div>
+      </template>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>
